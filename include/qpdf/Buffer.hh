@@ -33,15 +33,17 @@ class Buffer
     QPDF_DLL
     Buffer();
 
-    // Create a Buffer object whose memory is owned by the class and will be freed when the Buffer
-    // object is destroyed.
+    /*! \brief  Create a Buffer object whose memory is owned by the class and will be freed when the Buffer
+     * object is destroyed.
+     */
     QPDF_DLL
     Buffer(size_t size);
     QPDF_DLL
     Buffer(std::string&& content);
 
-    // Create a Buffer object whose memory is owned by the caller and will not be freed when the
-    // Buffer is destroyed.
+    /*! \brief Create a Buffer object whose memory is owned by the caller and will not be freed when the
+     * Buffer is destroyed.
+     */
     QPDF_DLL
     Buffer(unsigned char* buf, size_t size);
     QPDF_DLL
@@ -63,21 +65,23 @@ class Buffer
     QPDF_DLL
     unsigned char* getBuffer();
 
-    // Create a new copy of the Buffer. The new Buffer owns an independent copy of the data.
+    /*! \brief Create a new copy of the Buffer. The new Buffer owns an independent copy of the data. */
     QPDF_DLL
     Buffer copy() const;
 
-    // Move the content of the Buffer. After calling this method, the Buffer will be empty if the
-    // buffer owns its memory. Otherwise, the Buffer will be unchanged.
+    /*! \brief Move the content of the Buffer. After calling this method, the Buffer will be empty if the
+     * buffer owns its memory. Otherwise, the Buffer will be unchanged.
+     */
     QPDF_DLL
     std::string move();
 
-    // Return a string_view to the data.
+    /*! \brief Return a string_view to the data. */
     QPDF_DLL
     std::string_view view() const;
 
-    // Return a pointer to the data. NB: Unlike getBuffer, this method returns a valid pointer even
-    // if the Buffer is empty.
+    /*! \return a pointer to the data. NB: Unlike getBuffer, this method returns a valid pointer even
+     * if the Buffer is empty.
+     */
     QPDF_DLL
     char const* data() const;
 

@@ -26,10 +26,11 @@
 
 class FileInputSource;
 
-// This is an input source that reads from files, like FileInputSource, except that it opens and
-// closes the file surrounding every operation. This decreases efficiency, but it allows many more
-// of these to exist at once than the maximum number of open file descriptors. This is used for
-// merging large numbers of files.
+/*! \brief This is an input source that reads from files, like FileInputSource, except that it opens and
+ * closes the file surrounding every operation. This decreases efficiency, but it allows many more
+ * of these to exist at once than the maximum number of open file descriptors. This is used for
+ * merging large numbers of files.
+ */
 class QPDF_DLL_CLASS ClosedFileInputSource: public InputSource
 {
   public:
@@ -56,9 +57,10 @@ class QPDF_DLL_CLASS ClosedFileInputSource: public InputSource
     QPDF_DLL
     void unreadCh(char ch) override;
 
-    // The file stays open between calls to stayOpen(true) and stayOpen(false). You can use this to
-    // surround multiple operations on a single ClosedFileInputSource to reduce the overhead of a
-    // separate open/close on each call.
+    /*! \brief The file stays open between calls to stayOpen(true) and stayOpen(false). You can use this to
+     * surround multiple operations on a single ClosedFileInputSource to reduce the overhead of a
+     * separate open/close on each call.
+     */
     QPDF_DLL
     void stayOpen(bool);
 

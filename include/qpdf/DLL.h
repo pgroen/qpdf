@@ -35,8 +35,7 @@
 # define QPDF_VERSION "12.3.3"
 #endif
 
-/*
- * This file defines symbols that control the which functions,
+/*! \brief This file defines symbols that control the which functions,
  * classes, and methods are exposed to the public ABI (application
  * binary interface). See below for a detailed explanation.
  */
@@ -61,7 +60,7 @@
 # define QPDF_DLL_CLASS
 #endif
 
-/*
+/*! \brief
 
 Here's what's happening. See also https://gcc.gnu.org/wiki/Visibility
 for a more in-depth discussion.
