@@ -6,7 +6,6 @@ appimage/build
 /distribution/
 .cache
 /html
-Doxyfile
 /CMakeUserPresets.json
 /compile_commands.json
 
